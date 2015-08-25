@@ -1,0 +1,1 @@
+A /default/prefenreces/prefs.js fájlban át kell írni az alkalmazás URL-jét.

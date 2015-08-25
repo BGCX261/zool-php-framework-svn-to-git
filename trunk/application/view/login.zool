@@ -1,0 +1,36 @@
+
+<z:fragment    
+    xmlns:z="lib://core"
+    xmlns:c="lib://control"
+    xmlns:f="lib://form"
+    xmlns:l="lib://layout" >
+    
+    <vbox align="center" flex="1" orient="center">
+       
+        <vbox id="et" pack="center" align="center" orient="center" style="overflow:auto;">
+        
+        <groupbox pack="center" align="center" style="width:300px;">
+            <caption style="font-size:15px;font-weight:bold;">Login</caption>
+            
+             <f:form>
+                <l:grid id="gridLayout" columns="2" >
+                
+                   <label>Username:</label>
+                   <f:textbox value="#{loginUsername}" emptytext="Felhasználónév" />
+                    
+                   <label>Password:</label>
+                   <f:textbox value="#{loginPassword}" type="password" emptytext="Jelszó" />
+                   
+                   <f:button label="Login" action="#{identityController->login()}" reRender="/view/index.zool:main-window" />
+                  
+                </l:grid>            
+             </f:form>
+         
+             <description style="color:red; font-size:13px; font-weight:bold;">#{loginMessage}</description>
+            
+         </groupbox>         
+       </vbox>
+        
+     </vbox>
+         
+</z:fragment>

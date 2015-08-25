@@ -1,0 +1,68 @@
+ 00:24:48 INFO	[paramLogger]		fior
+ 00:24:48 INFO	[FirstController]		fior
+ 00:24:53 INFO	[paramLogger]		fior
+ 00:24:53 INFO	[FirstController]		fior
+10-01 23:46:55 CONSOLE	[DeployHelper]		INCOMPLETE DEPLOYMENT:
+10-01 23:46:59 CONSOLE	[DeployHelper]		INCOMPLETE DEPLOYMENT:
+10-01 23:50:56 CONSOLE	[DeployHelper]		INCOMPLETE DEPLOYMENT:
+10-01 23:51:00 CONSOLE	[DeployHelper]		INCOMPLETE DEPLOYMENT:
+10-01 23:52:37 CONSOLE	[DeployHelper]		INCOMPLETE DEPLOYMENT:
+10-01 23:52:37 CONSOLE	[DeployHelper]		
+
+zool\annotation\AnnotationException
+10-01 23:52:37 CONSOLE	[DeployHelper]		Observer value cannot be empty.
+/** @Observer
+     *  @RequestParameterized
+     **/
+Method [ <user> public method run ] {
+  @@ D:\xampp-zool2\htdocs\zool2\app\component\controller\FirstController.php 87 - 96
+
+  - Parameters [4] {
+    Parameter #0 [ <required> $v1 ]
+    Parameter #1 [ <required> $v2 ]
+    Parameter #2 [ <optional> $v3 = 1 ]
+    Parameter #3 [ <optional> $v4 = 2 ]
+  }
+}
+ (D:\xampp-zool2\htdocs\zool2\zool\annotation\annotations.php:63)
+10-01 23:52:37 CONSOLE	[DeployHelper]		#0 D:\xampp-zool2\htdocs\zool2\zool\vendor\addendum\Annotation.php(51): zool\annotation\Observer->checkConstraints(Object(zool\vendor\addendum\ReflectionAnnotatedMethod))
+#1 [internal function]: zool\vendor\addendum\Annotation->__construct(Array, Object(zool\vendor\addendum\ReflectionAnnotatedMethod))
+#2 D:\xampp-zool2\htdocs\zool2\zool\vendor\addendum\Annotation.php(151): ReflectionClass->newInstance(Array, Object(zool\vendor\addendum\ReflectionAnnotatedMethod))
+#3 D:\xampp-zool2\htdocs\zool2\zool\vendor\addendum\Annotation.php(138): zool\vendor\addendum\AnnotationsBuilder->instantiateAnnotation('Observer', Array, Object(zool\vendor\addendum\ReflectionAnnotatedMethod))
+#4 D:\xampp-zool2\htdocs\zool2\zool\vendor\addendum\Annotation.php(272): zool\vendor\addendum\AnnotationsBuilder->build(Object(zool\vendor\addendum\ReflectionAnnotatedMethod))
+#5 D:\xampp-zool2\htdocs\zool2\zool\vendor\addendum\Annotation.php(259): zool\vendor\addendum\ReflectionAnnotatedMethod->__construct('app\component\c...', 'run')
+#6 D:\xampp-zool2\htdocs\zool2\zool\vendor\addendum\Annotation.php(220): zool\vendor\addendum\ReflectionAnnotatedClass->createReflectionAnnotatedMethod(Object(ReflectionMethod))
+#7 D:\xampp-zool2\htdocs\zool2\zool\deploy\ApplicationDeployer.php(285): zool\vendor\addendum\ReflectionAnnotatedClass->getMethods()
+#8 D:\xampp-zool2\htdocs\zool2\zool\deploy\ApplicationDeployer.php(150): zool\deploy\ApplicationDeployer->scanComponents()
+#9 D:\xampp-zool2\htdocs\zool2\zool\deployer_helper.php(91): zool\deploy\ApplicationDeployer->deploy('D:\xampp-zool2\...')
+#10 {main}
+10-01 23:53:15 CONSOLE	[DeployHelper]		INCOMPLETE DEPLOYMENT:
+10-01 23:53:15 CONSOLE	[DeployHelper]		
+
+zool\annotation\AnnotationException
+10-01 23:53:15 CONSOLE	[DeployHelper]		Observer value cannot be empty.
+/** @Observer
+     *  @RequestParameterized
+     **/
+Method [ <user> public method run ] {
+  @@ D:\xampp-zool2\htdocs\zool2\app\component\controller\FirstController.php 87 - 96
+
+  - Parameters [4] {
+    Parameter #0 [ <required> $v1 ]
+    Parameter #1 [ <required> $v2 ]
+    Parameter #2 [ <optional> $v3 = 1 ]
+    Parameter #3 [ <optional> $v4 = 2 ]
+  }
+}
+ (D:\xampp-zool2\htdocs\zool2\zool\annotation\annotations.php:63)
+10-01 23:53:15 CONSOLE	[DeployHelper]		#0 D:\xampp-zool2\htdocs\zool2\zool\vendor\addendum\Annotation.php(51): zool\annotation\Observer->checkConstraints(Object(zool\vendor\addendum\ReflectionAnnotatedMethod))
+#1 [internal function]: zool\vendor\addendum\Annotation->__construct(Array, Object(zool\vendor\addendum\ReflectionAnnotatedMethod))
+#2 D:\xampp-zool2\htdocs\zool2\zool\vendor\addendum\Annotation.php(151): ReflectionClass->newInstance(Array, Object(zool\vendor\addendum\ReflectionAnnotatedMethod))
+#3 D:\xampp-zool2\htdocs\zool2\zool\vendor\addendum\Annotation.php(138): zool\vendor\addendum\AnnotationsBuilder->instantiateAnnotation('Observer', Array, Object(zool\vendor\addendum\ReflectionAnnotatedMethod))
+#4 D:\xampp-zool2\htdocs\zool2\zool\vendor\addendum\Annotation.php(272): zool\vendor\addendum\AnnotationsBuilder->build(Object(zool\vendor\addendum\ReflectionAnnotatedMethod))
+#5 D:\xampp-zool2\htdocs\zool2\zool\vendor\addendum\Annotation.php(259): zool\vendor\addendum\ReflectionAnnotatedMethod->__construct('app\component\c...', 'run')
+#6 D:\xampp-zool2\htdocs\zool2\zool\vendor\addendum\Annotation.php(220): zool\vendor\addendum\ReflectionAnnotatedClass->createReflectionAnnotatedMethod(Object(ReflectionMethod))
+#7 D:\xampp-zool2\htdocs\zool2\zool\deploy\ApplicationDeployer.php(285): zool\vendor\addendum\ReflectionAnnotatedClass->getMethods()
+#8 D:\xampp-zool2\htdocs\zool2\zool\deploy\ApplicationDeployer.php(150): zool\deploy\ApplicationDeployer->scanComponents()
+#9 D:\xampp-zool2\htdocs\zool2\zool\deployer_helper.php(91): zool\deploy\ApplicationDeployer->deploy('D:\xampp-zool2\...')
+#10 {main}

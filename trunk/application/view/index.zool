@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<window
+    id="main-window"
+    title="#{identity eq null ? 'Login' : 'Estate Agency'}"
+    width="1300"
+    height="800"
+    context="clipmenu"
+    xmlns:z="lib://core"
+    xmlns:c="lib://control"
+    xmlns:f="lib://form"
+    xmlns:l="lib://layout" 
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    
+ <menupopup id="clipmenu">  
+  <menuitem label="Cut"/>  
+  <menuitem label="Copy"/>  
+  <menuitem label="Paste"/>  
+</menupopup> 
+    
+<z:fragment rendered="#{startupController->client() == 'xulrunner'}"> 
+ <script type="application/javascript" src="chrome://myapp/content/js/jquery.js" ></script>
+ <script type="application/javascript" src="chrome://myapp/content/js/Sys.js" ></script> 
+ <script type="application/javascript" src="chrome://myapp/content/main.js" ></script>
+</z:fragment>
+
+<z:fragment rendered="#{startupController->client() == 'firefox'}"> 
+ <script type="application/javascript" src="http://#{SERVER['SERVER_NAME']}/zool/js/jquery.js" ></script>
+ <script type="application/javascript" src="http://#{SERVER['SERVER_NAME']}/zool/js/Sys.js" ></script> 
+ <script type="application/javascript" src="http://#{SERVER['SERVER_NAME']}/zool/js/zool.js" ></script>
+</z:fragment>
+
+    <z:fragment rendered="#{identity == null}">           
+       <z:includeFile src="/view/login.zool" />
+    </z:fragment>
+    
+    
+   <z:fragment rendered="#{identity != null}">
+       <z:includeFile src="/view/estates.zool" />      
+    </z:fragment>
+
+ 
+    
+    
+<statusbar>
+  <statusbarpanel label="#{identity ? 'Logged in: ' . identity->username : 'Please log in'}"/>  
+ 
+  <c:button rendered="#{identity ne null}" action="#{identityController->logout()}"
+   reRender="main-window" image="http://#{SERVER['SERVER_NAME']}/zool/images/logout.png" tooltiptext="Logout"/>
+  
+  <spacer flex="1"/> 
+  
+  <c:button label="Rerender" action="#{helloController->dummy()}" reRender="main-window" />
+  <c:button label="Generate db" action="#{startupController->generate()}" reRender="main-window" />   
+</statusbar>
+
+
+</window>

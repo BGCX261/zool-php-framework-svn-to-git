@@ -1,0 +1,9 @@
+<z:template xmlns:z="lib://core">
+    <box  id="mainbox">
+     
+    <z:insert name="menu">MENU</z:insert>
+    <z:insert name="content">CONTENT</z:insert>
+
+    
+    </box>
+</z:template>

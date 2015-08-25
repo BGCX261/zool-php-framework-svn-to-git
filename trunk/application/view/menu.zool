@@ -1,0 +1,9 @@
+<z:fragment xmlns:z="lib://core">
+    <toolbox>
+      <toolbar id="nav-toolbar">
+        <toolbarbutton id="nav-users"  accesskey="U" label="Users"/>
+        <toolbarbutton id="nav-groups" accesskey="p" label="Groups"/>
+        <toolbarbutton id="nav-events" accesskey="E" label="Events" disabled="true"/>
+      </toolbar>
+    </toolbox>
+</z:fragment>

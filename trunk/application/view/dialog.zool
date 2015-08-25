@@ -1,0 +1,21 @@
+<dialog
+  xmlns:z="lib://core"
+  xmlns:c="lib://control"
+  xmlns:f="lib://form"
+  id="main-window"
+  title="#{estate->name} edit"
+  buttons=""
+  ondialogaccept="return true;"
+  ondialogcancel="return true;">
+  
+  <script type="application/javascript" src="chrome://myapp/content/js/jquery.js" />
+  <script type="application/javascript" src="chrome://myapp/content/js/Sys.js" />
+  <script type="application/javascript" src="chrome://myapp/content/main.js" />
+  
+  <dialogheader title="#{estate->name}" description="Edit"/>
+    
+  <z:composition template="/view/templates/estateForm.zool">
+    <z:param name="estate" value="#{estate}" />
+   </z:composition>
+  
+</dialog>

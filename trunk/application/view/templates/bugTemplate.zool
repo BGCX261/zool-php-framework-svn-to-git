@@ -1,0 +1,23 @@
+
+<z:template xmlns:z="lib://core">
+
+<box id="holder">
+
+<z:fragment rendered="#{empty bug}">
+ There is no bug selected.
+</z:fragment>
+
+<z:fragment rendered="#{not empty bug}">
+    <groupbox flex="1">
+        <caption>Selected bug</caption>                        
+        <description>Id: #{bug->id}</description>
+        <description>Desc: #{bug->description}</description>
+        <description>Created: #{bug->created->format('Y-m-d')}</description>
+        
+        <spacer flex="1"/> <c:button action="#{bugController->deselect()}" reRender="buglist" label="deselect"/>
+    </groupbox>
+</z:fragment>
+
+</box>
+
+</z:template>

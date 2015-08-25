@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:c="lib://basetag.core">
+
+<head>
+<title>TITLE</title>
+</head>
+
+<body bgcolor="#fff">
+
+<c:repeat var="f" value="#{app.data}">
+1
+</c:repeat>
+    Body
+</body>
+
+</html>

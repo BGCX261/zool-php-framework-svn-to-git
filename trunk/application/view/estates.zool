@@ -1,0 +1,56 @@
+<z:fragment    
+    xmlns:z="lib://core"
+    xmlns:c="lib://control"
+    xmlns:f="lib://form"
+    xmlns:l="lib://layout">
+
+       <toolbox>
+          <toolbar id="nav-toolbar">
+            <c:toolbarbutton id="nav-users" action="#{estateController->getUserEstates()}"  label="Refresh list" reRender="estateList, estateDeck" />
+            <c:toolbarbutton id="nav-groups" label="Groups"/>
+            <c:toolbarbutton id="nav-events" label="Events" disabled="true"/>
+          </toolbar>
+        </toolbox>
+
+    <hbox flex="1" id="estateContainer">
+     
+    <z:run action="#{estateController->getUserEstates()}" />
+           
+    <tree id="estateList" flex="3" rows="10" onselect="Zool.byId('estateDeck').selectedIndex = this.currentIndex;">
+      <treecols>  
+        <treecol id="sender" label="Name" flex="1"/>  
+        <treecol id="subject" label="Created" flex="2"/>  
+      </treecols>  
+      
+      <treechildren>  
+      
+       <z:repeatArray value="#{estatesList}" var="estate">
+       
+        <treeitem>  
+          <treerow>  
+            <treecell label="#{estate->name}"/>  
+            <treecell label="#{estate->created->format('Y-m-d')}"/>  
+          </treerow>  
+        </treeitem> 
+           
+        </z:repeatArray>
+      </treechildren>  
+      
+    </tree>
+
+    
+    <hbox flex="1">
+        <deck id="estateDeck" flex="1">
+        
+         <z:repeatArray value="#{estatesList}" var="estate">
+            <z:composition template="/view/templates/estateForm.zool">
+                <z:param name="estate" value="#{estate}" />
+            </z:composition>
+         </z:repeatArray>
+        
+        </deck>
+    </hbox> 
+
+    </hbox>
+    
+</z:fragment>

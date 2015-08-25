@@ -1,0 +1,30 @@
+<z:template xmlns:z="lib://core" xmlns:f="lib://form" xmlns:c="lib://control" xmlns:l="lib://layout">
+    <groupbox flex="1">
+        <caption>#{estate->name}</caption>
+        
+
+        <f:form>
+
+            <l:grid columns="2">
+                <!--
+                <label>Owner:</label>
+                <description>#{estate->owner->username}</description>
+                -->
+
+                <label>Name:</label>
+                <f:textbox id="#{estate-&gt;id}_name_v" value="#{estate_name}" default="#{estate-&gt;name}"/>
+
+                <label>Created:</label>
+                <f:datepicker type="popup" value="#{estate_created}" default="#{estate-&gt;created-&gt;format('Y-m-d')}"/>
+
+                <f:button action="#{estateController-&gt;save(estate-&gt;id)}" label="Save" reRender="/view/estates.zool:estateContainer" flex="1"/>
+                <c:button action="#{estateController-&gt;select(estate-&gt;id)}" label="In dialog / Rerender" oncomplete="Zool.openDialog('http://#{SERVER['SERVER_NAME']}/zool/?action=dummy&amp;amp;reRender=/view/dialog.zool:main-window');"/>
+
+            </l:grid>
+
+
+        </f:form>
+
+    </groupbox>
+
+</z:template>
